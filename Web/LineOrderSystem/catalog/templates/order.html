@@ -1,0 +1,63 @@
+{% extends "home.html" %}
+
+{% block menu %}
+    <li class="current_page_item"><a href="{% url 'home' %}">店長</a></li>
+    <li><a href="{% url 'customer' %}">消費者</a></li>
+    <!-- <li><a href="#">Photos</a></li> -->
+    
+    <li><a href="#">Links</a></li>
+    <li><a href="#">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="utf-8" />
+    <title>Client Side jQuery DataTables</title>
+    <!--引用css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+</head>
+
+{{date}}
+<body>
+    <table id="myDataTalbe"  class="display"  >
+        <thead>
+
+            <tr>
+                <th>#</th>
+                <th>User Name</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u,p,q,d,num in findOrder %}
+                <tr>
+                    <td align="center">{{num}}</td>
+                    <td align="center">{{u}}</td>
+                    <td align="center">{{p}}</td>
+                    <td align="center">{{q}}</td>
+                    <td align="center">{{d}}</td>
+                </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+    <!--引用jQuery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--引用dataTables.js-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+     
+    <script type="text/javascript">
+        $(function () {
+
+            $("#myDataTalbe").DataTable({
+                searching: false, //關閉filter功能
+                columnDefs: [{
+               
+                }]
+            });
+        });
+    </script>
+</body>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block menu %}
+    <li><a href="{% url 'home' %}">店長</a></li>
+    <li class="current_page_item"><a href="{% url 'customer' %}">消費者</a></li>
+    <li><a href="{% url 'reference' %}">Reference</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+    
+<center>
+    <h2>Searh Here:</h2>
+    <div id="search" >
+        <form method="post" id="search-text">
+            <table >
+                <!-- <input type="text" name="s" id="search-text" value="" />
+                <input type="submit" id="search-submit" value="" /> -->
+                    {% csrf_token %}
+                    {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</center>
+{% endblock %}
+

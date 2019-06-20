@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block title %}{% endblock %}
+
+{% block menu %}
+    <li ><a href="{% url 'home' %}">店長</a></li>
+    <li ><a href="{% url 'customer' %}">消費者</a></li>
+    <li><a href="{% url 'reference' %}">Reference</a></li>
+    <li class="current_page_item"><a href="{% url 'contact' %}">Contact</a></li>
+{% endblock %}
+
+{% block content %}
+<pre>
+   
+</pre>
+    <div id = test2>
+        <p >
+            店長: 莊雅萍  <br> 
+            電話: 09-xxxxxxxx<br>
+            E-mail: xxxx@gmail.com                                     
+        </p>
+    </div>
+<pre>
+   
+</pre>
+    
+{% endblock %}
