@@ -9,7 +9,7 @@
 
 ## Tutorials
 
-###執行程式
+### 執行程式
 
 * 用`Label.ipynb` 產生Training data
 * 用`NER.ipynb` 訓練Named-entity recognition model
